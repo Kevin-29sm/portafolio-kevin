@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Kevin Orlando Ortiz Paramo, web programming student.">
+  <title>Kevin Ortiz | Web Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <div class="contenedor-header">
+    <header>
+      <div class="logo">
+        <a href="#inicio">Kevin Ortiz</a>
+      </div>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="#inicio"    data-i18n="nav.home"      onclick="cerrarMenu()">HOME</a></li>
+          <li><a href="#sobremi"   data-i18n="nav.about"     onclick="cerrarMenu()">ABOUT ME</a></li>
+          <li><a href="#skills"    data-i18n="nav.skills"    onclick="cerrarMenu()">SKILLS</a></li>
+          <li><a href="#educacion" data-i18n="nav.education" onclick="cerrarMenu()">EDUCATION</a></li>
+          <li><a href="#portfolio" data-i18n="nav.projects"  onclick="cerrarMenu()">PROJECTS</a></li>
+          <li><a href="#contacto"  data-i18n="nav.contact"   onclick="cerrarMenu()">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones-header">
+        <!-- LANGUAGE SWITCHER -->
+        <button id="btn-idioma" class="btn-idioma" type="button"
+                aria-label="Change language">ES</button>
+
+        <!-- MENU BUTTON (mobile) -->
+        <button id="btn-menu" class="btn-menu" type="button"
+                aria-label="Open menu" onclick="alternarMenu()">&#9776;</button>
+      </div>
+    </header>
+  </div>
+
+  <main>
+
+    <!-- ===================== HOME ===================== -->
+    <section id="inicio" class="hero">
+      <div class="avatar" aria-hidden="true">KO</div>
+      <p class="hero-saludo" data-i18n="hero.greeting">Hello, I am</p>
+      <h1>Kevin Orlando Ortiz Paramo</h1>
+      <h2 data-i18n="hero.role">Web Programming Student</h2>
+      <p class="hero-texto" data-i18n="hero.text">
+        I build simple and clear web pages using HTML, CSS and JavaScript.
+      </p>
+      <a class="boton" href="#portfolio" data-i18n="hero.button">See my projects</a>
+    </section>
+
+    <!-- ===================== ABOUT ME ===================== -->
+    <section id="sobremi">
+      <h2 class="titulo-seccion" data-i18n="about.title">About me</h2>
+      <p data-i18n="about.p1">
+        I am a student of the Technical Professional program in Web Programming at UNIESPINAL, in El Espinal, Tolima, Colombia.
+      </p>
+      <p data-i18n="about.p2">
+        I like to learn how a page works: from the menu and the buttons to the user login and the images. I am also interested in game development.
+      </p>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills">
+      <h2 class="titulo-seccion" data-i18n="skills.title">Skills</h2>
+      <p data-i18n="skills.desc">These are the tools I use to build a web page.</p>
+      <ul class="lista-skills">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Java (OOP)</li>
+        <li>Git &amp; GitHub</li>
+        <li>Responsive design</li>
+      </ul>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section id="educacion">
+      <h2 class="titulo-seccion" data-i18n="education.title">Education</h2>
+
+      <article class="tarjeta">
+        <h3 data-i18n="education.item1.title">Technical Professional in Web Programming</h3>
+        <p class="meta">UNIESPINAL · El Espinal, Tolima</p>
+        <p data-i18n="education.item1.text">
+          Courses: Object-Oriented Programming (Java), General Systems Theory, web development and English.
+        </p>
+      </article>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="portfolio">
+      <h2 class="titulo-seccion" data-i18n="projects.title">Projects</h2>
+
+      <div class="rejilla">
+        <article class="tarjeta">
+          <h3 data-i18n="projects.p1.title">UNIRELAS Web Platform</h3>
+          <p data-i18n="projects.p1.text">
+            A team project: a web platform with a home page, a menu and several pages for the user.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <h3 data-i18n="projects.p2.title">Login Page</h3>
+          <p data-i18n="projects.p2.text">
+            A simple login page where the user writes an email and a password, with a button to send the form.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <h3 data-i18n="projects.p3.title">Java OOP Exercises</h3>
+          <p data-i18n="projects.p3.text">
+            Practice exercises with classes, objects and methods in Java.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contacto">
+      <h2 class="titulo-seccion" data-i18n="contact.title">Contact</h2>
+      <p data-i18n="contact.text">Write me a message using this form.</p>
+
+      <form id="formulario" class="formulario">
+        <label for="nombre" data-i18n="form.name">Name</label>
+        <input id="nombre" type="text" required>
+
+        <label for="correo" data-i18n="form.email">Email</label>
+        <input id="correo" type="email" required>
+
+        <label for="mensaje" data-i18n="form.message">Message</label>
+        <textarea id="mensaje" rows="4" required></textarea>
+
+        <button class="boton" type="submit" data-i18n="form.send">Send message</button>
+        <p id="respuesta-form" class="respuesta" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <p>&copy; <span id="anio"></span> Kevin Orlando Ortiz Paramo. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
